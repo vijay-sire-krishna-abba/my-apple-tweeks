@@ -1,0 +1,2 @@
+Copy Url and CLICK 
+control+CMD+O to open url in chrome window 4 and 5 
