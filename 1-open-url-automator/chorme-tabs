@@ -1,0 +1,16 @@
+-- Get the URL from clipboard
+set theURL to the clipboard
+
+tell application "Google Chrome"
+	repeat with w in windows
+		
+		repeat with t in tabs of w
+			set tabTitle to title of t
+			
+			if tabTitle contains "Codex" or tabTitle contains "Terminalx" then
+				tell w to make new tab with properties {URL:theURL}
+				exit repeat -- We only need one matching tab to identify the window
+			end if
+		end repeat
+	end repeat
+end tell
